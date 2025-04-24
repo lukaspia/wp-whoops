@@ -29,6 +29,7 @@ if (!class_exists('WpWhoops')) {
         public function __construct()
         {
             $this->loadFiles();
+            $this->registerHooks();
         }
 
         public static function init(): self
@@ -38,6 +39,16 @@ if (!class_exists('WpWhoops')) {
             }
 
             return self::$instance;
+        }
+
+        public function registerHooks(): void
+        {
+            add_action('init',
+                function () {
+                    $errorHandlerController = new \WpWhoops\Src\Controller\ErrorHandlerController();
+                    $errorHandlerController->registerErrorHandler();
+                }
+            );
         }
 
         private function loadFiles(): void
