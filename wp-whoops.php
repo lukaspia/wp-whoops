@@ -24,9 +24,30 @@ if (!defined('ABSPATH')) {
 if (!class_exists('WpWhoops')) {
     class WpWhoops
     {
+        private static ?WpWhoops $instance = null;
+
         public function __construct()
         {
+            $this->loadFiles();
+        }
 
+        public static function init(): self
+        {
+            if (self::$instance === null) {
+                self::$instance = new self();
+            }
+
+            return self::$instance;
+        }
+
+        private function loadFiles(): void
+        {
+            require_once __DIR__ . '/vendor/autoload.php';
         }
     }
+
+    /**
+     * Run plugin
+     */
+    WpWhoops::init();
 }
