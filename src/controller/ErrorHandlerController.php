@@ -16,6 +16,8 @@ class ErrorHandlerController
 {
     public function registerErrorHandler(ErrorHandlerInterface $errorHandler): void
     {
-        $errorHandler->handleErrors();
+        if (WP_DEBUG && WP_DEBUG_DISPLAY) {
+            $errorHandler->handleErrors();
+        }
     }
 }

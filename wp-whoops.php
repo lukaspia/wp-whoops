@@ -29,7 +29,7 @@ if (!class_exists('WpWhoops')) {
         public function __construct()
         {
             $this->loadFiles();
-            $this->registerHooks();
+            $this->registerHandlers();
         }
 
         public static function init(): self
@@ -41,19 +41,15 @@ if (!class_exists('WpWhoops')) {
             return self::$instance;
         }
 
-        public function registerHooks(): void
-        {
-            add_action('init',
-                function () {
-                    $errorHandlerController = new \WpWhoops\Src\Controller\ErrorHandlerController();
-                    $errorHandlerController->registerErrorHandler(new \WpWhoops\Src\Handler\WhoopsErrorHandler());
-                }
-            );
-        }
-
         private function loadFiles(): void
         {
             require_once __DIR__ . '/vendor/autoload.php';
+        }
+
+        private function registerHandlers(): void
+        {
+            $errorHandlerController = new \WpWhoops\Src\Controller\ErrorHandlerController();
+            $errorHandlerController->registerErrorHandler(new \WpWhoops\Src\Handler\WhoopsErrorHandler());
         }
     }
 
