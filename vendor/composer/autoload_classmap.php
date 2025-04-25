@@ -7,7 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'WpWhoops\\Src\\Controller\\ErrorHandlerController' => $baseDir . '/src/controller/ErrorHandlerController.php',
-    'WpWhoops\\Src\\Handler\\ErrorHandlerInterface' => $baseDir . '/src/handler/ErrorHandlerInterface.php',
-    'WpWhoops\\Src\\Handler\\WhoopsErrorHandler' => $baseDir . '/src/handler/WhoopsErrorHandler.php',
 );

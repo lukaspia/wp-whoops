@@ -9,6 +9,7 @@ class ComposerStaticInitdcd7726e0c7c207b694a66411a6df7a7
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
+            'WpWhoops\\' => 9,
             'Whoops\\' => 7,
         ),
         'P' => 
@@ -18,6 +19,10 @@ class ComposerStaticInitdcd7726e0c7c207b694a66411a6df7a7
     );
 
     public static $prefixDirsPsr4 = array (
+        'WpWhoops\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
@@ -30,9 +35,6 @@ class ComposerStaticInitdcd7726e0c7c207b694a66411a6df7a7
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'WpWhoops\\Src\\Controller\\ErrorHandlerController' => __DIR__ . '/../..' . '/src/controller/ErrorHandlerController.php',
-        'WpWhoops\\Src\\Handler\\ErrorHandlerInterface' => __DIR__ . '/../..' . '/src/handler/ErrorHandlerInterface.php',
-        'WpWhoops\\Src\\Handler\\WhoopsErrorHandler' => __DIR__ . '/../..' . '/src/handler/WhoopsErrorHandler.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

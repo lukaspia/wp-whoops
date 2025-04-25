@@ -22,16 +22,28 @@ if (!defined('ABSPATH')) {
 }
 
 if (!class_exists('WpWhoops')) {
+    /**
+     *
+     */
     class WpWhoops
     {
+        /**
+         * @var \WpWhoops|null
+         */
         private static ?WpWhoops $instance = null;
 
+        /**
+         *
+         */
         public function __construct()
         {
             $this->loadFiles();
             $this->registerHandlers();
         }
 
+        /**
+         * @return self
+         */
         public static function init(): self
         {
             if (self::$instance === null) {
@@ -41,15 +53,21 @@ if (!class_exists('WpWhoops')) {
             return self::$instance;
         }
 
+        /**
+         * @return void
+         */
         private function loadFiles(): void
         {
             require_once __DIR__ . '/vendor/autoload.php';
         }
 
+        /**
+         * @return void
+         */
         private function registerHandlers(): void
         {
-            $errorHandlerController = new \WpWhoops\Src\Controller\ErrorHandlerController();
-            $errorHandlerController->registerErrorHandler(new \WpWhoops\Src\Handler\WhoopsErrorHandler());
+            $errorHandlerController = new \WpWhoops\Controller\ErrorHandlerController();
+            $errorHandlerController->registerErrorHandler();
         }
     }
 
