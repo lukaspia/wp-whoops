@@ -15,5 +15,8 @@
             "name": "lukasz",
             "email": "lukaspiasny@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^12.1"
+    }
 }
