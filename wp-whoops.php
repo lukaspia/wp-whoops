@@ -46,7 +46,7 @@ if (!class_exists('WpWhoops')) {
             add_action('init',
                 function () {
                     $errorHandlerController = new \WpWhoops\Src\Controller\ErrorHandlerController();
-                    $errorHandlerController->registerErrorHandler();
+                    $errorHandlerController->registerErrorHandler(new \WpWhoops\Src\Handler\WhoopsErrorHandler());
                 }
             );
         }

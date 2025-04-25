@@ -1,6 +1,6 @@
 <?php
 
-namespace WpWhoops\Src;
+namespace WpWhoops\Src\Handler;
 
 interface ErrorHandlerInterface
 {

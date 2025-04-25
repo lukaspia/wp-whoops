@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace WpWhoops\Src;
+namespace WpWhoops\Src\Handler;
 
 
-class ErrorHandler implements ErrorHandlerInterface
+class WhoopsErrorHandler implements ErrorHandlerInterface
 {
     public function handleErrors(): void
     {

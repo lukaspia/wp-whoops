@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace WpWhoops\Src\Controller;
 
 
-use WpWhoops\Src\ErrorHandlerInterface;
+use WpWhoops\Src\Handler\ErrorHandlerInterface;
 
 if (!defined('ABSPATH')) {
     exit;
