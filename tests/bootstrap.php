@@ -6,6 +6,6 @@ if (!defined('ABSPATH')) {
     define('ABSPATH', __DIR__ . '/fake-wordpress/');
 }
 
-if (!defined('WP_DEBUG')) {
-    define('WP_DEBUG', true);
-}
+//if (!defined('WP_DEBUG')) {
+//    define('WP_DEBUG', true);
+//}

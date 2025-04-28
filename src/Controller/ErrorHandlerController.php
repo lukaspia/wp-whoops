@@ -21,14 +21,16 @@ class ErrorHandlerController
     /**
      * @return void
      */
-    public function registerErrorHandler(): void
+    public function registerErrorHandler(): bool
     {
         if (!$this->isDebugModeEnabled()) {
-            return;
+            return false;
         }
 
         $handler = ErrorHandlerFactory::create();
         $handler->registerErrorsHandler();
+
+        return true;
     }
 
     /**
@@ -36,10 +38,6 @@ class ErrorHandlerController
      */
     private function isDebugModeEnabled(): bool
     {
-        if (!defined('WP_DEBUG') || !WP_DEBUG || !defined('WP_DEBUG_DISPLAY') || !WP_DEBUG_DISPLAY) {
-            return false;
-        }
-
-        return true;
+        return !(!defined('WP_DEBUG') || !WP_DEBUG || !defined('WP_DEBUG_DISPLAY') || !WP_DEBUG_DISPLAY);
     }
 }

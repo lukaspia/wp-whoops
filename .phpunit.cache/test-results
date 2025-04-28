@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"Controller\\ErrorHandlerControllerTest::testInitWithDebugEnabled":0.021,"Handler\\WhoopsErrorHandlerTest::testImplementsErrorHandlerInterface":0.015}}
